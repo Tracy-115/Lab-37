@@ -1,4 +1,6 @@
 #include <iostream>
+#include <fstream>
+#include <string>
 using namespace std;
 int sum_ascii(string a){ //a function sum_ascii() that takes in a string
     int tot = 0;
@@ -21,14 +23,14 @@ int main() {
     ifstream file("lab-37-data.txt"); //opening the file 
     string line;
     long long total = 0;
-    if(!file.in_open()){
+    if(!file.is_open()){
         cout << "Cannot open file" << endl;
     }
     while (getline(file, line)) {
         total += sum_ascii(line);
     }
     file.close();
-    cout << total << endl; //cout-ting the result
+    cout << total << endl; //cout-ting the sum of all the ASCII
 
     return 0;
 }
