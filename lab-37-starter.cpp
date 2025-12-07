@@ -20,15 +20,6 @@ int gen_hash_dex(const string &code){
 
 int main() {
     map<int, list<string>> hash_table; //created a map named hash_table
-    char a = 'A';
-    cout << a << endl;
-    cout << (int) a << endl;
-    int b = 66;
-    cout << b << endl;
-    cout << (char) b << endl;
-    
-    cout << sum_ascii("536B9DFC93AF") << endl; //this is testing
-
     ifstream file("lab-37-data.txt"); //opening the file 
     string line;
     long long total = 0;
@@ -38,6 +29,20 @@ int main() {
     while (getline(file, line)) {
         total += sum_ascii(line);
     }
+    while (file >> code) {
+        int index = gen_hash_index(code); 
+        hash_table[index].push_back(code);
+    }
+    char a = 'A';
+    cout << a << endl;
+    cout << (int) a << endl;
+    int b = 66;
+    cout << b << endl;
+    cout << (char) b << endl;
+    /*while (getline(file, line)) {
+        total += sum_ascii(line);
+    }*/
+    cout << sum_ascii("536B9DFC93AF") << endl; //this is testing
     file.close();
     cout << total << endl; //cout-ting the sum of all the ASCII
 
