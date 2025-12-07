@@ -45,7 +45,15 @@ int main() {
     cout << sum_ascii("536B9DFC93AF") << endl; //this is testing
     file.close();
     cout << total << endl; //cout-ting the sum of all the ASCII
-
+    int count = 0;
+    for (auto &entry : hash_table)  //this prints out the index and also all the values in it
+        cout << "Index: " << entry.first << " -> ";
+        for (const string &item : entry.second) {
+            cout << " ";
+        }
+        count++;
+        if (count == 100) break;//this is to check the 100 enteries
+    }
     return 0;
 }
 
