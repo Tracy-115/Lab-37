@@ -3,7 +3,7 @@ using namespace std;
 int sum_ascii(string a){ //a function sum_ascii() that takes in a string
     int tot = 0;
     for (int i=0; i<a.length(); i++){
-        tot += (int)s[i]; //this adds up the after converting letters into numbers
+        tot += (int)a[i]; //this adds up the after converting letters into numbers
     }
     return tot;
 }
@@ -16,7 +16,7 @@ int main() {
     cout << b << endl;
     cout << (char) b << endl;
     
-    cout << sum_ascii("536B9DFC93AF") << endl;
+    cout << sum_ascii("536B9DFC93AF") << endl; //this is testing
     return 0;
 }
 
