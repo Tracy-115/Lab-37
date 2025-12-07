@@ -35,7 +35,7 @@ int main() {
     for (auto &entry : hash_table){  //this prints out the index and also all the values in it
         cout << "Index: " << entry.first << ": ";
         for (const string &item : entry.second) {
-            cout << " ";
+            cout << item << " ";
         }
         cout << endl; //I did three couts because I couldn't see the index well
         cout << endl;
@@ -45,7 +45,7 @@ int main() {
     }
     return 0;
 }
-
+//for the first 100 enteries, we find the hash index by finding the sum and %97, after that, the number we get will be the index, if the numbers are the same, it bomes a list and thus chaining on and on
 /* 
 These targets are present in the dataset and can be used for testing:
 536B9DFC93AF
