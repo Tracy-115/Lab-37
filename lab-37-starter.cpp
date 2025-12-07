@@ -2,15 +2,24 @@
 #include <fstream>
 #include <string>
 using namespace std;
-int sum_ascii(string a){ //a function sum_ascii() that takes in a string
+/*int sum_ascii(string a){ //a function sum_ascii() that takes in a string
     int tot = 0;
     for (int i=0; i<a.length(); i++){
         tot += (int)a[i]; //this adds up the after converting letters into numbers
     }
     return tot;
+}*/
+
+int gen_hash_dex(const string &code){
+    int tot = 0;
+    for (char c : code) {
+        tot += (int)c;
+    }
+    return tot % 97;//i chose 97 as said in the module
 }
 
 int main() {
+    map<int, list<string>> hash_table; //created a map named hash_table
     char a = 'A';
     cout << a << endl;
     cout << (int) a << endl;
