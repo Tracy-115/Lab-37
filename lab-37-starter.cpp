@@ -17,6 +17,19 @@ int main() {
     cout << (char) b << endl;
     
     cout << sum_ascii("536B9DFC93AF") << endl; //this is testing
+
+    ifstream file("lab-37-data.txt"); //opening the file 
+    string line;
+    long long total = 0;
+    if(!file.in_open()){
+        cout << "Cannot open file" << endl;
+    }
+    while (getline(file, line)) {
+        total += sum_ascii(line);
+    }
+    file.close();
+    cout << total << endl; //cout-ting the result
+
     return 0;
 }
 
