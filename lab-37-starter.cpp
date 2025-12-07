@@ -27,7 +27,7 @@ int main() {
     }
 
     while (file >> num) {
-        int index = gen_hash_index(num); 
+        int index = gen_hash_dex(num); 
         hash_table[index].push_back(num);
     }
     
